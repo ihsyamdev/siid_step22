@@ -4,6 +4,7 @@
   "description": "SiidのStep22の課題提出用リポジトリ",
   "main": "index.js",
   "scripts": {
+    "dev": "npx tailwindcss -i ./src/assets/input.css -o ./src/assets/output.css -w",
     "build": "npx tailwindcss -i ./src/assets/input.css -o ./src/assets/output.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
