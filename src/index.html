@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../assets/output.css" rel="stylesheet">
+  <link href="./assets/output.css" rel="stylesheet">
   <title>簡易ポケモン図鑑</title>
 </head>
 <body>
-  <header >
-    <h1>簡易ポケモン図鑑</h1>
+  <header>
+    <div class="grid justify-center">
+      <h1 class="text-xl">簡易ポケモン図鑑</h1>
+    </div>
   </header>
   <main>
-    <input type="text" id="search" placeholder="ポケモンの名前を入力">
-    <button id="search-button">
-      検索
-    </button>
+    <div class="grid justify-items-center">
+      <div class="" id="search">
+        <input class="w-96 border border-solid border-sky-600 rounded-lg" type="text" id="search-text" placeholder="ポケモンの名前を入力">
+        <button class="border bg-blue-500 px-2 py-1 text-sm font-semibold  text-white rounded-md" id="search-button">
+          検索
+        </button>
+      </div>
+    </div>
   </main>
 </body>
 <!-- src/assets/app.jsを読み込み -->
