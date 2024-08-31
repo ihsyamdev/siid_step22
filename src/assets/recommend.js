@@ -32,6 +32,7 @@ export function setupRecommend() {
       });
 
       recommendationList.innerHTML = '';
+      recommendationList.classList.add('bg-white', 'border', 'border-gray-300', 'shadow-md', 'absolute');
       recommendationList.appendChild(fragment);
       recommendationList.classList.remove('hidden');
     } else {
