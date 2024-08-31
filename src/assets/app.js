@@ -1,2 +1,5 @@
-// 画面にアラートを表示する
-alert('Hello, Webpack!');
+import { setupRecommend } from '../assets/recommend.js';
+
+document.addEventListener('DOMContentLoaded', function() {
+  setupRecommend();
+})
