@@ -3,17 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../assets/output.css" rel="stylesheet">
-  <title>TailWindCSS</title>
+  <link href="./assets/output.css" rel="stylesheet">
+  <title>簡易ポケモン図鑑</title>
 </head>
 <body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  <h2 class="bg-stone-600">
-    BackGroud Gray!!!
-  </h2>
+  <header>
+    <div class="grid justify-center">
+      <h1 class="text-xl">簡易ポケモン図鑑</h1>
+    </div>
+  </header>
+  <main>
+    <div class="grid justify-items-center">
+      <div class="flex" id="search">
+        <div class="mr-2">
+          <input id="search-text" class="w-96 border border-solid border-sky-600 rounded-lg" type="text" placeholder="ポケモンの名前を入力">
+          <div id="recommendation-list" class="w-96 mt-1">
+          </div>
+        </div>
+        <button class="border bg-blue-500 h-8 px-2 py-1 text-sm font-semibold  text-white rounded-md" id="search-button">
+          検索
+        </button>
+      </div>
+    </div>
+  </main>
 </body>
 <!-- src/assets/app.jsを読み込み -->
-<script src="../assets/app.js"></script>
+<script src="./assets/app.js" type="module"></script>
 </html>

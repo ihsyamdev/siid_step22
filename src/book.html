@@ -3,15 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../../dist/output.css" rel="stylesheet">
-  <title>TailWindCSS</title>
+  <link href="../src/assets/output.css" rel="stylesheet">
+  <title>簡易ポケモン図鑑</title>
 </head>
 <body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  <h2 class="bg-stone-600">
-    BackGroud Gray!!!
-  </h2>
+  <header>
+    <h1>ピカチュウ</h1>
+  </header>
+  <main>
+    <section class="profile">
+      <table>
+        <tr>
+          <th>ずかんNo.</th>
+          <td>025</td>
+        </tr>
+        <tr>
+          <th>たかさ</th>
+          <td>0.4m</td>
+        </tr>
+        <tr>
+          <th>おもさ</th>
+          <td>6.0kg</td>
+        </tr>
+        <tr>
+          <th>タイプ</th>
+          <td>でんき</td>
+        </tr>
+      </table>
+    </section>
+    <section class="media flex">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="ピカチュウ">
+      <button class="speaker">🔊</button>
+      <audio src="https://pokeapi.co/api/v2/pokemon-species/25/cry" preload="auto"></audio>
+    </section>
+  </main>
 </body>
+<script src="../assets/app.js"></script>
 </html>
