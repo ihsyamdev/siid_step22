@@ -1,28 +1,24 @@
+import { pokemonNames } from "../assets/pokemonNames.js";
+
 export function setupRecommend() {
   const searchInput = document.getElementById('search-text');
   const recommendationList = document.getElementById('recommendation-list');
 
-  const pokemonNames = [
-    'Pikachu', 'Charmander', 'Bulbasour', 'Squirtle', 'Jigglypuff', 'Meowth', 'Psyduck'
-  ];
-  
   // 入力イベントリスナーを追加
   searchInput.addEventListener('input', function() {
-    console.log(searchInput);
-    const query = searchInput.value.toLowerCase();
-    console.log(query);
-    const filteredNames = pokemonNames.filter(name => name.toLowerCase().includes(query));
+    const query = searchInput.value;
+    const filteredNames = pokemonNames.filter(pokemon => pokemon.japaneseName.includes(query));
 
     recommendationList.innerHTML = '';
 
     if (query && filteredNames.length > 0) {
       filteredNames.forEach(name => {
         const listItem = document.createElement('div');
-        listItem.textContent = name;
+        listItem.textContent = name.japaneseName;
         listItem.className = 'p-2 cursor-pointer hover:bg-gray-200';
 
         listItem.addEventListener('click', function() {
-          searchInput.value = name;
+          searchInput.value = name.japaneseName;
           recommendationList.classList.add('hidden');
         })
 
