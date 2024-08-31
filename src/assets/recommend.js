@@ -4,12 +4,17 @@ export function setupRecommend() {
   const searchInput = document.getElementById('search-text');
   const recommendationList = document.getElementById('recommendation-list');
 
-  // 入力イベントリスナーを追加
+  if (!searchInput || !recommendationList) {
+    console.error('DOM要素が見つかりません')
+    return;
+  }
+
+  // 入力に合わせて日本語名をフィルタリング
   searchInput.addEventListener('input', function() {
     const query = searchInput.value;
     const filteredNames = pokemonNames.filter(pokemon => pokemon.japaneseName.includes(query));
 
-    recommendationList.innerHTML = '';
+    const fragment = document.createDocumentFragment();
 
     if (query && filteredNames.length > 0) {
       filteredNames.forEach(name => {
@@ -20,19 +25,16 @@ export function setupRecommend() {
         listItem.addEventListener('click', function() {
           searchInput.value = name.japaneseName;
           recommendationList.classList.add('hidden');
-        })
+        });
 
-        recommendationList.appendChild(listItem);
-      })
+        fragment.appendChild(listItem);
+      });
+
+      recommendationList.innerHTML = '';
+      recommendationList.appendChild(fragment);
       recommendationList.classList.remove('hidden');
     } else {
       recommendationList.classList.add('hidden');
     }
-  })
-
-  document.addEventListener('click', function*(e) {
-    if (!searchInput.contains(e.target) && !recommendationList.contains(e.target)) {
-      recommendationList.classList.add('hidden');
-    }
-  })
+  });
 }
