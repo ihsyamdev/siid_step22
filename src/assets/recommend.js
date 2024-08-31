@@ -1,4 +1,5 @@
 import { pokemonNames } from "../assets/pokemonNames.js";
+import { convertHiraganaToKatakana } from "./convertHiraganaToKatakana.js";
 
 export function setupRecommend() {
   const searchInput = document.getElementById('search-text');
@@ -11,7 +12,7 @@ export function setupRecommend() {
 
   // 入力に合わせて日本語名をフィルタリング
   searchInput.addEventListener('input', function() {
-    const query = searchInput.value;
+    const query = convertHiraganaToKatakana(searchInput.value);
     const filteredNames = pokemonNames.filter(pokemon => pokemon.japaneseName.includes(query));
 
     const fragment = document.createDocumentFragment();
