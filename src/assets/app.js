@@ -23,11 +23,18 @@ if (window.location.pathname.endsWith('book.html')) {
   const number = urlParams.get('number');
   // 値が存在しない、数字でない、1未満、最大値より大きい、整数でないものはエラー
   if (!number || isNaN(number) || number < 1 || number > getMaxPokemonNumber() || number % 1 !== 0) {
-    alert(`存在するポケモンを選択してください_${number}_${getMaxPokemonNumber()}`);
+    alert('存在するポケモンの番号を指定してください');
     window.location.href = 'index.html';
   }
-  document.addEventListener('DOMContentLoaded', function() {
-    getFromPokeAPI(number);
+  document.addEventListener('DOMContentLoaded', async function() {
+    try {
+      await getFromPokeAPI(number);
+      const content = document.getElementById('content');
+      content.style.display = 'block';
+    } catch (error) {
+      alert('ポケモンのデータを取得できませんでした');
+      window.location.href = 'index.html';
+    }
   })
   
   const speakerButton = document.getElementById("speaker");

@@ -7,52 +7,54 @@
   <title>簡易ポケモン図鑑</title>
 </head>
 <body>
-  <header>
-    <div>
-      <h1 class="grid justify-center text-2xl font-bold" id="name">ピカチュウ</h1>
-    </div>
-  </header>
-  <main class="h-40 grid justify-center">
-    <div class="flex">
-      <section class="profile">
-        <table>
-          <tr>
-            <th class="text-right">ずかんNo.</th>
-            <td class="pl-2" id="number">025</td>
-          </tr>
-          <tr>
-            <th class="text-right">たかさ</th>
-            <td class="pl-2" id="height">0.4m</td>
-          </tr>
-          <tr>
-            <th class="text-right">おもさ</th>
-            <td class="pl-2" id="weight">6.0kg</td>
-          </tr>
-          <tr>
-            <th class="text-right">タイプ</th>
-            <td class="pl-2" id="type">でんき</td>
-          </tr>
-        </table>
-      </section>
-      <section class="media flex items-center">
-        <div>
-          <img id="image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="ピカチュウ">
-        </div>
-        <div>
-          <p class="text-xs">なきごえ</p>
-          <div class="text-center">
-            <button class="speaker" id="speaker">🔊</button>
-            <audio id="voice" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1.ogg" preload="auto"></audio>
+  <div id="content" style="display: none;">
+    <header>
+      <div>
+        <h1 class="grid justify-center text-2xl font-bold" id="name">ピカチュウ</h1>
+      </div>
+    </header>
+    <main class="h-40 grid justify-center">
+      <div class="flex">
+        <section class="profile">
+          <table>
+            <tr>
+              <th class="text-right">ずかんNo.</th>
+              <td class="pl-2" id="number">025</td>
+            </tr>
+            <tr>
+              <th class="text-right">たかさ</th>
+              <td class="pl-2" id="height">0.4m</td>
+            </tr>
+            <tr>
+              <th class="text-right">おもさ</th>
+              <td class="pl-2" id="weight">6.0kg</td>
+            </tr>
+            <tr>
+              <th class="text-right">タイプ</th>
+              <td class="pl-2" id="type">でんき</td>
+            </tr>
+          </table>
+        </section>
+        <section class="media flex items-center">
+          <div>
+            <img id="image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="ピカチュウ">
           </div>
-        </div>
-      </section>
-    </div>
-    <div class="grid justify-end">
-      <button class="border bg-blue-500 h-8 px-2 py-1 text-sm font-semibold  text-white rounded-md">
-        <a href="./index.html">戻る</a>
-      </button>
-    </div>
-  </main>
+          <div>
+            <p class="text-xs">なきごえ</p>
+            <div class="text-center">
+              <button class="speaker" id="speaker">🔊</button>
+              <audio id="voice" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1.ogg" preload="auto"></audio>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="grid justify-end">
+        <button class="border bg-blue-500 h-8 px-2 py-1 text-sm font-semibold  text-white rounded-md">
+          <a href="./index.html">戻る</a>
+        </button>
+      </div>
+    </main>
+  </div>
 </body>
 <script src="./assets/app.js" type="module"></script>
 </html>

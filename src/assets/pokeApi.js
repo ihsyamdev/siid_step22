@@ -1,13 +1,15 @@
 import { getPokemonNameFromNumber } from "./pokemonNames.js";
 import { getTypeFromEnglishName } from "./pokemonTypes.js";
 
+const API_URL = 'https://pokeapi.co/api/v2/pokemon';
+
 export async function getFromPokeAPI(number) {
 
   // Pokemonエンドポイントから基本データを取得する
   try {
-    const apiUrl = 'https://pokeapi.co/api/v2/pokemon';
-    const response = await fetch(`${apiUrl}/${number}`)
+    const response = await fetch(`${API_URL}/${number}`)
 
+    console.log(response.status);
     if (response.status !== 200) {
       alert('ポケモンのデータを取得できませんでした');
       return;
