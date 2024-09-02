@@ -9,7 +9,6 @@ export async function getFromPokeAPI(number) {
   try {
     const response = await fetch(`${API_URL}/${number}`)
 
-    console.log(response.status);
     if (response.status !== 200) {
       alert('ポケモンのデータを取得できませんでした');
       return;
@@ -19,8 +18,9 @@ export async function getFromPokeAPI(number) {
     // 番号, たかさ, おもさ, タイプ, 画像, 鳴き声を取得
     const pokemonNumber = responseData.id;
     const pokemonName = getPokemonNameFromNumber(pokemonNumber);
-    const pokemonHeight = responseData.height;
-    const pokemonWeight = responseData.weight;
+    // メートル単位、キログラム単位に変換
+    const pokemonHeight = parseInt(responseData.height) / 10;
+    const pokemonWeight = parseInt(responseData.weight) / 10;
     const pokemonTypes = responseData.types.map(type => getTypeFromEnglishName(type.type.name));
     const pokemonImageUrl = responseData.sprites.front_default;
     const pokemonVoiceUrl = responseData.cries.latest;
@@ -35,8 +35,8 @@ export async function getFromPokeAPI(number) {
     const voiceElement = document.getElementById('voice');
     numberElement.textContent = pokemonNumber;
     nameElement.textContent = pokemonName;
-    heightElement.textContent = pokemonHeight;
-    weightElement.textContent = pokemonWeight;
+    heightElement.textContent = pokemonHeight.toFixed(1);
+    weightElement.textContent = pokemonWeight.toFixed(1);
     typeElement.textContent = pokemonTypes.join(', ');
     imageElement.src = pokemonImageUrl;
     voiceElement.src = pokemonVoiceUrl;
