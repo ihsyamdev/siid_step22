@@ -15,7 +15,7 @@ export function setupRecommend() {
     const query = convertHiraganaToKatakana(searchInput.value);
     const filteredNames = pokemonNames.filter(pokemon => pokemon.japaneseName.includes(query));
 
-    const fragment = document.createDocumentFragment();
+    const nameListFragment = document.createDocumentFragment();
 
     if (query && filteredNames.length > 0) {
       filteredNames.forEach(name => {
@@ -26,14 +26,19 @@ export function setupRecommend() {
         listItem.addEventListener('click', function() {
           searchInput.value = name.japaneseName;
           recommendationList.classList.add('hidden');
+
+          // 番号を裏で保持
+          const hiddenNumber = document.getElementById('number');
+          hiddenNumber.value = name.number;
+          hiddenNumber.textContent = name.number;
         });
 
-        fragment.appendChild(listItem);
+        nameListFragment.appendChild(listItem);
       });
 
       recommendationList.innerHTML = '';
       recommendationList.classList.add('bg-white', 'border', 'border-gray-300', 'shadow-md', 'absolute');
-      recommendationList.appendChild(fragment);
+      recommendationList.appendChild(nameListFragment);
       recommendationList.classList.remove('hidden');
     } else {
       recommendationList.classList.add('hidden');
