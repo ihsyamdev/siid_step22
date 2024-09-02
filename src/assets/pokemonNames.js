@@ -1025,3 +1025,11 @@ export const pokemonNames = [
   {"number":"1024","englishName":"terapagos","japaneseName":"テラパゴス"},
   {"number":"1025","englishName":"pecharunt","japaneseName":"モモワロウ"}
 ];
+
+export function getPokemonNameFromNumber(number) {
+  return pokemonNames.find(pokemon => pokemon.number == number).japaneseName;
+}
+
+export function getMaxPokemonNumber() {
+  return parseInt(pokemonNames[pokemonNames.length - 1].number);
+}

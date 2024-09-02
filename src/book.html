@@ -9,40 +9,40 @@
 <body>
   <header>
     <div>
-      <h1 class="grid justify-center text-2xl font-bold">ピカチュウ</h1>
+      <h1 class="grid justify-center text-2xl font-bold" id="name">ピカチュウ</h1>
     </div>
   </header>
   <main class="h-40 grid justify-center">
     <div class="flex">
       <section class="profile">
-        <table class="">
+        <table>
           <tr>
             <th class="text-right">ずかんNo.</th>
-            <td class="pl-2">025</td>
+            <td class="pl-2" id="number">025</td>
           </tr>
           <tr>
             <th class="text-right">たかさ</th>
-            <td class="pl-2">0.4m</td>
+            <td class="pl-2" id="height">0.4m</td>
           </tr>
           <tr>
             <th class="text-right">おもさ</th>
-            <td class="pl-2">6.0kg</td>
+            <td class="pl-2" id="weight">6.0kg</td>
           </tr>
           <tr>
             <th class="text-right">タイプ</th>
-            <td class="pl-2">でんき</td>
+            <td class="pl-2" id="type">でんき</td>
           </tr>
         </table>
       </section>
       <section class="media flex items-center">
         <div>
-          <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="ピカチュウ">
+          <img id="image" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="ピカチュウ">
         </div>
         <div>
           <p class="text-xs">なきごえ</p>
           <div class="text-center">
-            <button class="speaker">🔊</button>
-            <audio src="https://pokeapi.co/api/v2/pokemon-species/25/cry" preload="auto"></audio>
+            <button class="speaker" id="speaker">🔊</button>
+            <audio id="voice" src="https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/1.ogg" preload="auto"></audio>
           </div>
         </div>
       </section>
