@@ -1,4 +1,4 @@
-import { pokemonNames } from "./assets/pokemonNames.js";
+import { pokemonNames } from "./pokemonNames.js";
 import { convertHiraganaToKatakana } from "./convertHiraganaToKatakana.js";
 
 export function setupRecommend() {
