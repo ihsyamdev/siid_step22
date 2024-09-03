@@ -1,4 +1,4 @@
-import { setupRecommend } from '../assets/recommend.js';
+import { setupRecommend } from './assets/recommend.js';
 import { getMaxPokemonNumber } from './pokemonNames.js';
 import { getFromPokeAPI } from './pokeApi.js';
 
