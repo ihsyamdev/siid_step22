@@ -3,7 +3,8 @@ import { getMaxPokemonNumber } from './pokemonNames.js';
 import { getFromPokeAPI } from './pokeApi.js';
 
 // index.htmlでのみ実行
-if (window.location.pathname.endsWith('index.html')) {
+console.log(window.location.pathname)
+if (window.location.pathname.endsWith('index.html') || window.location.pathname == '/') {
   document.addEventListener('DOMContentLoaded', function() {
     setupRecommend();
   })
